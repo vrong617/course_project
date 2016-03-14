@@ -1,0 +1,49 @@
+
+<div class="window">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-8">
+        <div class="container">
+          <div class="spacedown">
+<div class="centerify">
+  <div class="row">
+    <div class="col-md-11">
+      <h1>Your cart:</h1>
+    </div>
+    <div class="col-md-1">
+    </div>
+  </div>
+</div>
+<div class="list_of_items">
+  <%= render(cart.line_items) %>
+</div>
+<div class="summ">
+  <div class="row">
+    <div class="col-md-4">
+      <h1>Total:</h1>
+    </div>
+    <div class="col-md-8">
+      <div class="price">
+        <h1><%= sprintf("$ %0.02f", @cart.total) %></h1>
+      </div>
+    </div>
+  </div>
+</div>
+          </div>
+        </div>
+      </div>
+      <div class="clear">
+        <div class="col-md-2">
+          <div class="row">
+            <%= link_to image_tag('edit.png', onMouseover: "this.src='/assets/edit_hover.png'", onmouseout:"this.src='/assets/edit.png'"), new_order_path %>
+          </div>
+          <div class="row">
+            <%= link_to image_tag('delete.png', onMouseover: "this.src='/assets/delete_hover.png'", onmouseout:"this.src='/assets/delete.png'"), @cart, method: :delete, data: { confirm: 'Clear the cart?' } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

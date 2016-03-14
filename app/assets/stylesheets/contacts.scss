@@ -1,0 +1,77 @@
+// Place all the styles related to the Contacts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.contacts {
+
+  background-image: url('4.jpg');
+
+  #header .container-fluid {
+    background-image: url('menu_1.png');
+  }
+
+  .window .container-fluid {
+    background-image: none;
+    border: 0;
+
+    .row {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .row .row {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .window .container {
+    background-image: url('0.jpg');
+    background-repeat: round;
+    border:2px;
+    border-color:#000;
+    border-style:solid;
+    min-height:380px;
+    height:100%;
+  }
+
+  .notice {
+    background-image: url('menu_1.png');
+    opacity: 0;
+    position: fixed;
+
+    h1 {
+      text-align: center;
+      color: #000;
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+  }
+
+  .contact-field{
+    margin:10px 0;
+    padding:10px;
+  }
+
+  .title-product{
+    text-align:center;
+  }
+
+  .contact-icon, .contact-type {
+    display:inline-block;
+    font-size:32px;
+  }
+
+  .first{
+    border-top:2px solid #333;
+  }
+
+  .last{
+    border-bottom:2px solid #333;
+  }
+
+  .window .container-fluid{
+    margin-top:0;
+  }
+
+}

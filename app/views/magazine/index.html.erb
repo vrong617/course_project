@@ -1,0 +1,226 @@
+<div id="modal_form">
+  <img src='/assets/exit.png' id="modal_close"/>
+  <div class="centerify">
+    <h1 id="form_title"></h1>
+    <img id="form_image" src="#"/>
+    <p id="form_description"></p>
+    <h3 id="form_price"></h3>
+  </div>
+</div>
+<div id="overlay"></div>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+  </div>
+  <div class="col-md-3">
+    <div class="notice">
+      <h1 id="notice"><%= notice %></h1>
+    </div>
+  </div>
+</div>
+
+<div class="centerify">
+
+  <div class="books-slider">
+
+    <a href="#" class="prev-slide">
+      <img src="/assets/prev"/>
+    </a>
+
+    <div class="slider-border">
+
+      <div class="slider-container">
+        <div class="slide active-slide">
+          <a href="4" class="view-product">
+            <img src="/assets/error_load.png"/>
+          </a>
+        </div>
+        <div class="slide">
+          <a href="3" class="view-product">
+            <img src="/assets/test.jpg"/>
+          </a>
+        </div>
+        <div class="slide">
+          <a href="7" class="view-product">
+            <img src="/assets/test1.jpg"/>
+          </a>
+        </div>
+        <div class="slide">
+          <a href="1" class="view-product">
+            <img src="/assets/test2.jpg"/>
+          </a>
+        </div>
+        <div class="slide">
+          <a href="5" class="view-product">
+            <img src="/assets/test3.jpg"/>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <a href="#" class="next-slide">
+      <img src="/assets/next"/>
+    </a>
+
+    <ul class="slider-dots">
+      <li class="dot active-dot"><a href="#">&bull;</a></li>
+      <li class="dot"><a href="#">&bull;</a></li>
+      <li class="dot"><a href="#">&bull;</a></li>
+      <li class="dot"><a href="#">&bull;</a></li>
+      <li class="dot"><a href="#">&bull;</a></li>
+    </ul>
+
+  </div>
+
+  <div class="spacedown">
+    <div class="row">
+        <h1 class="title-product">Listing Products</h1>
+    </div>
+  </div>
+
+</div>
+
+<div class="container-fluid">
+
+    <% @products.each_with_index do |product, i| %>
+    <div class="product" style=background-image:url('/assets/<%= i%4 %>.jpg')>
+      <div class="container">
+        <div class="col-md-2 image ">
+          <%=link_to image_tag(product.image_url), product %>
+        </div>
+        <div class="col-md-8">
+          <div class="container">
+            <div class="row">
+              <div class="title">
+                <%= product.title %>
+              </div>
+            </div>
+            <div class="descr">
+                <%= product.description %>
+            </div>
+            </div>
+          </div>
+        <div class="col-md-2">
+          <div class="container">
+            <div class="row">
+              <div class="to_cart">
+                <%= link_to image_tag('add_to_cart.png', onMouseover: "this.src='/assets/add_to_cart_hover.png'", onmouseout:"this.src='/assets/add_to_cart.png'"),
+                            line_items_path(product_id: product), :method => :post, remote:true %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="price">
+                <%= sprintf("$ %0.02f",product.price) %>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+  <div class="pages">
+    <%= will_paginate @products %>
+  </div>
+
+
+<script type="text/javascript" charset="utf-8">
+  function view_product(id){
+      <% @all_products.each_with_index do |product, i| %>
+      if (id==<%= i %>){
+          $('#form_title').html('<%= product.title %>');
+          $('#form_image').attr("src", '<%= product.image_url %>');
+          $('#form_description').html('<%= product.description %>');
+          $('#form_price').html('<%= sprintf("$ %0.02f",product.price) %>');
+
+      }
+      <% end %>
+      $('#overlay').fadeIn(400,
+              function(){
+                  $('#modal_form')
+                          .css('display', 'block')
+                          .animate({opacity: 1, top: '50%'}, 200);
+              });
+  }
+
+    $(function() {
+        $('.view-product').click( function(event){
+            event.preventDefault();
+            var id=parseInt($(this).attr('href'))-1;
+            view_product(id);
+        });
+
+        $('.image').click( function(event){
+            event.preventDefault();
+            var id=$(this).index('.image')+<%=(@products.current_page-1)*5%>;
+            view_product(id);
+        });
+
+        $('#modal_close, #overlay').click( function(){
+            $('#modal_form')
+                    .animate({opacity: 0, top: '45%'}, 200,
+                    function(){
+                        $(this).css('display', 'none');
+                        $('#overlay').fadeOut(400);
+                    }
+            );
+        });
+        $('.slide a').mouseenter(function () {
+            $('.slider-container').animate({opacity: 1}, 300);
+        })
+        .mouseleave(function () {
+            $('.slider-container').animate({opacity: 0.65}, 300);
+        });
+
+        $('.next-slide').click(function() {
+            var currentSlide = $('.active-slide');
+            var currentDot= $('.active-dot');
+            var nextSlide = currentSlide.next('.slide');
+            var nextDot=currentDot.next();
+            if (nextSlide.length == 0) {
+                nextSlide = $('.slide').first();
+                nextDot=$('.dot').first();
+            }
+            currentSlide.hide().removeClass('active-slide');
+            currentDot.removeClass('active-dot');
+            nextSlide.stop().addClass('active-slide').fadeIn(1000);
+            nextDot.addClass('active-dot');
+            return false;
+        });
+
+        $('.prev-slide').click(function () {
+            var currentSlide = $('.active-slide');
+            var currentDot= $('.active-dot');
+            var prevSlide = currentSlide.prev('.slide');
+            var prevDot=currentDot.prev();
+            if (prevSlide.length == 0) {
+                prevSlide = $('.slide').last();
+                prevDot=$('.dot').last();
+            }
+            currentSlide.hide().removeClass('active-slide');
+            currentDot.removeClass('active-dot');
+            prevSlide.stop().addClass('active-slide').fadeIn(1000);
+            prevDot.addClass('active-dot');
+            return false;
+        });
+
+        $('.dot').click(function(){
+            var currentDot=$('.active-dot');
+            var nextDot=$(this);
+            if (!nextDot.is(currentDot)) {
+                var currentSlide=$('.active-slide');
+                var nextSlide=$('.slide').eq($('.dot').index(this));
+                currentDot.removeClass('active-dot');
+                nextDot.addClass('active-dot');
+                currentSlide.stop().hide().removeClass('active-slide');
+                nextSlide.fadeIn(600).addClass('active-slide');
+            }
+            return false;
+        });
+
+    });
+</script>

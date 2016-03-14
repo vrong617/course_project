@@ -1,0 +1,123 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Place all the styles related to the orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.users{
+  background-image:url('0.jpg');
+
+  #header .container-fluid {
+    background-image: url('menu.png');
+  }
+
+  .notice {
+    background-image:url('menu_1.png');
+    opacity:0;
+    position:fixed;
+    float:right;
+
+    h1 {
+      text-align:center;
+      color:#000;
+      margin-left:8px;
+      margin-right:8px;
+    }
+  }
+
+  .window .container-fluid{
+    background-image:none;
+    margin:40px 0 60px 0;
+    border:0;
+  }
+
+  .container .col-md-6{
+    padding-left:35px;
+    padding-right:35px;
+  }
+
+  .container-fluid .container {
+    background-image: url('4.jpg');
+    background-repeat: round;
+    border:2px;
+    border-color:#000;
+    border-style:solid;
+    min-height:400px;
+    height:100%;
+  }
+
+}
+
+.container{
+  width:100%;
+  padding:0;
+}
+
+.row{
+  width:100%;
+  padding:0;
+  margin-left:0;
+  border:0px;
+  margin-top:15px;
+  margin-bottom:15px;
+  vertical-align: middle;
+}
+
+.title{
+  font-size:32px;
+  font-style:italic;
+}
+
+.space{
+  padding-left:15px;
+}
+
+.price{
+  text-align: right;
+  font-size:16px;
+  font-weight: bold;
+  margin-right:10px;
+}
+
+.window .price{
+  margin-top:25px;
+}
+
+
+legend {
+  color: #dfd;
+  background: #141;
+  font-family: sans-serif;
+  padding: 0.2em 1em;
+  border-color:#000;
+}
+
+form {
+  label{
+    display:block;
+    color:#000;
+    margin-right:16px;
+  }
+
+  .actions{
+    text-align:center;
+    margin-top:30px;
+  }
+  .field{
+    padding-bottom:25px;
+    text-align:center;
+  }
+}
+.actions input{
+  min-width:100px;
+}
+
+
+
+
+
+
+
+

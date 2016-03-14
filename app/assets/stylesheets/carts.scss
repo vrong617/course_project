@@ -1,0 +1,105 @@
+// Place all the styles related to the carts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.carts {
+
+  background-image: url('4.jpg');
+
+  #header .container-fluid {
+    background-image: url('menu_1.png');
+  }
+
+  .window .container-fluid {
+    background-image: none;
+    border: 0;
+
+    .row {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .row .row {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .window .container {
+    background-image: url('0.jpg');
+    background-repeat: round;
+    border:2px;
+    border-color:#000;
+    border-style:solid;
+    min-height:380px;
+    height:100%;
+  }
+
+  .list_of_items {
+    margin-left: 64px;
+    margin-right: 64px;
+    margin-bottom: 167px;
+    font-weight: bold;
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      display: inline;
+    }
+
+    p {
+      display: inline;
+      font-size: 20px;
+      font-weight: bold;
+      margin-left: 16px;
+    }
+
+    .price {
+      margin-top: 8px;
+
+      h1 {
+        font-size: 20px;
+      }
+    }
+
+  }
+
+  .summ {
+    margin-left: 64px;
+    margin-right: 64px;
+    margin-bottom: 48px;
+
+    .price {
+      margin-top: 0;
+
+      h1 {
+        text-decoration: underline;
+      }
+
+    }
+  }
+
+  .col-md-11 h1 {
+    margin-left: 70.35px;
+  }
+
+  .col-md-1 {
+    padding-top: 8px;
+  }
+
+  .clear .col-md-2 {
+    padding-left: 0;
+  }
+
+  .notice {
+    background-image: url('menu_1.png');
+    opacity: 0;
+    position: fixed;
+
+    h1 {
+      text-align: center;
+      color: #000;
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+  }
+}

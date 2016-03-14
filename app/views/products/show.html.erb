@@ -1,0 +1,43 @@
+<div class="window">
+  <div class="centerify">
+    <div class="container-fluid">
+
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+             <div class="row">
+                <p id="notice"><%= notice %></p>
+            </div>
+            <div class="spacedown">
+                <div class="row">
+                    <div class="title">
+                        <%= @product.title %>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                 <img src="<%= @product.image_url %>">
+            </div>
+            <div class="row">
+                 <%= @product.description %>
+            </div>
+            <div class="row">
+                    <div class="row">
+                        <div class="col-md-4">
+                        </div>
+                         <div class="col-md-6">
+                            <div class="price">
+                                $ <%= @product.price %>
+                            </div>
+                         </div>
+                        <div class="col-md-3">
+                        </div>
+            </div>
+          </div>
+        </div>
+      <div class="col-md-2">
+
+      </div>
+    </div>
+  </div>
+</div>

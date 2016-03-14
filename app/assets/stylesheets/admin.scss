@@ -1,0 +1,41 @@
+// Place all the styles related to the Admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.admin{
+  background-image:url('0.jpg');
+
+  .notice {
+    background-image:url('menu_1.png');
+    opacity:0;
+    position:fixed;
+    margin-left:25px;
+
+    h1 {
+      text-align:center;
+      color:#000;
+      margin-left:8px;
+      margin-right:8px;
+    }
+
+  }
+
+  #header .container-fluid {
+    background-image: url('menu.png');
+  }
+
+  .container{
+    background-image:url('cloud.png');
+    background-size: cover;
+    height:381px;
+    width:640px;
+    text-align:center;
+    margin:32px auto;
+  }
+
+  .info{
+    margin-top:25%;
+  }
+
+
+}
+

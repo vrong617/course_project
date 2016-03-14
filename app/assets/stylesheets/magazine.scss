@@ -1,0 +1,45 @@
+// Place all the styles related to the Magazine controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.magazine{
+  background-image:url('4.jpg');
+
+  .notice {
+    background-image:url('menu_1.png');
+    opacity:0;
+    position:fixed;
+    margin-left:25px;
+
+    h1 {
+      text-align:center;
+      color:#000;
+      margin-left:8px;
+      margin-right:8px;
+    }
+}
+
+  .image img{
+    max-height:100%;
+  }
+
+}
+
+.divide{
+  margin-top:15px;
+}
+
+.divide img{
+	min-width:60%;
+}
+
+.col-md-2 .price{
+  margin-top:64px;
+}
+
+.to_cart{
+  text-align:right;
+  margin-right:10px;
+}
+
+

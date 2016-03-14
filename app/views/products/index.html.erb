@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+<div class="centerify">
+  <div class="spacedown">
+    <h1>Listing Products</h1>
+  </div>
+</div>
+<div class="container">
+    <div class="col-md-11">
+    </div>
+    <div class="col-md-1">
+      <%= link_to image_tag('add.png', onMouseover: "this.src='/assets/add_hover.png'", onmouseout:"this.src='/assets/add.png'"), new_product_path %>
+    </div>
+</div>
+<div class="container-fluid">
+
+    <% @products.each_with_index do |product, i| %>
+      <div class="product" style=background-image:url('/assets/<%= i%4+1 %>.jpg')>
+        <div class="col-md-2">
+          <div class="image">
+          <div class="container">
+            <div class="row">
+                <img src="<%= product.image_url %>">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="container">
+            <div class="row">
+              <div class="title">
+                <%= product.title %>
+              </div>
+            </div>
+            <div class="descr">
+              <%= product.description %>
+            </div>
+            <div class="price">
+                <%= sprintf("$ %0.02f",product.price) %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-1">
+          <div class="container">
+            <div class="row">
+                <%= link_to image_tag('show.png', onMouseover: "this.src='/assets/show_hover.png'", onmouseout:"this.src='/assets/show.png'"), product %>
+            </div>
+            <div class="row">
+                <%= link_to image_tag('edit.png', onMouseover: "this.src='/assets/edit_hover.png'", onmouseout:"this.src='/assets/edit.png'"), edit_product_path(product) %>
+            </div>
+            <div class="row">
+                <%= link_to image_tag('delete.png', onMouseover: "this.src='/assets/delete_hover.png'", onmouseout:"this.src='/assets/delete.png'"), product, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </div>
+        </div>
+    </div>
+    <% end %>
+  </div>
+<div class="pages">
+  <%= will_paginate @orders %>
+</div>

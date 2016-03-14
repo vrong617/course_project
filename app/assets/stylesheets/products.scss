@@ -1,0 +1,97 @@
+// Place all the styles related to the Products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.products{
+  background-image:url('0.jpg');
+
+  #header .container-fluid {
+    background-image: url('menu.png');
+  }
+
+  #header li a:hover{
+    color:#333;
+    opacity:0.5;
+  }
+
+  #header .active a:hover{
+    color:#feff96;
+    opacity:1;
+  }
+
+  .col-md-2{
+    padding-left:0;
+  }
+
+}
+
+.container{
+  width:100%;
+  padding:0;
+}
+
+.row{
+  width:100%;
+  padding:0;
+  margin-left:0;
+  border:0px;
+  margin-top:15px;
+  margin-bottom:15px;
+  vertical-align: middle;
+}
+
+img{
+  max-height:256px;
+  max-width:256px;
+}
+.image {
+  border-right-style:solid;
+  height:100%;
+  text-align: center;
+}
+
+.title{
+  font-size:32px;
+  font-style:italic;
+}
+
+.space{
+  padding-left:15px;
+}
+
+.price{
+  text-align: right;
+  font-size:16px;
+  font-weight: bold;
+  margin-right:10px;
+}
+
+.window .price{
+  margin-top:25px;
+}
+
+.product{
+  height:167px;
+  margin-top:15px;
+  border:2px;
+  border-color:#000;
+  border-style:solid;
+  width:100%;
+  padding:0;
+  margin-left:0;
+}
+
+.descr{
+  height:64px;
+  overflow: hidden;
+  text-align: justify;
+}
+
+.container-fluid .container{
+  height:163px;
+}
+
+
+
+
+

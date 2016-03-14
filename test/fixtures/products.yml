@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: My
+  description: MyText
+  image_url: MyString
+  price: 9.99
+
+two:
+  title: My
+  description: MyInfo
+  image_url: link
+  price: 23.1
+
+hello:
+  title: Hello, niggaz!
+  description: Swagga book for swagga dudes.
+  image_url: http://png-images.ru/wp-content/uploads/2015/01/book_PNG2116.png
+  price: 1488.228

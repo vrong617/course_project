@@ -1,0 +1,13 @@
+<h1>Hi, <%= @order.name %>!</h1>
+
+<h3>Your order includes:</h3>
+<% @order.line_items.each do |item| %>
+  <p>
+    <%= item.product.title %>
+    x <%=item.quantity%>
+    <%=sprintf("$ %0.02f", item.total_price) %>
+  </p>
+<% end %>
+  <h3><%='Total cost: '+sprintf("$ %0.02f", @order.total) %></h3>
+<h3>We'll send you a separate e-mail when your order send. Thank you for your buy!</h3>
+<h2>Sincerely Yours, "BookShelf"!</h2>

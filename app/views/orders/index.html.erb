@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.name %></td>
+
+        <td><%= link_to image_tag('view.png', onMouseover: "this.src='/assets/view_hover.png'", onmouseout:"this.src='/assets/view.png'"), order %></td>
+        <td><%= link_to image_tag('delete.png', onMouseover: "this.src='/assets/delete_hover.png'", onmouseout:"this.src='/assets/delete.png'"), order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="pages">
+    <%= will_paginate @orders %>
+</div>
